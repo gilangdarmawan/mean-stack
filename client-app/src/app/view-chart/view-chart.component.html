@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h6 class="mb-0">No Show Patient</h6>
+    <button (click)="showList()" type="button" class="btn btn-link text-dark"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <canvas
+        baseChart
+        [chartType]="chartType"
+        [labels]="chartLabels"
+        [data]="chartData"
+        [colors]="chartColors"
+      >
+      </canvas>
+    </div>
+    <small class="d-flex justify-content-center">Appointment Total : {{ totalPatient }}</small>
+  </div>
+</div>

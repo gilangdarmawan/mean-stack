@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">No Show Patient List</h4>
+    <button (click)="addDoctor()" class="btn btn-info btn-sm"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;Add
+        Doctor</button>
+</div>
+<div class="table-responsive">
+    <table class="table table-sm table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Patient Total</th>
+                <th>No Show</th>
+                <th>% No Show</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doctor of doctors">
+                <td>{{ doctor.name }}</td>
+                <td>{{ doctor.patient }}</td>
+                <td>{{ doctor.noshow }}</td>
+                <td>{{ doctor.percentage }}</td>
+
+                <td>
+                    <button (click)="updateDoctor(doctor)" class="btn btn-sm btn-success mr-3">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                    <button (click)="deleteDoctor(doctor)" class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
